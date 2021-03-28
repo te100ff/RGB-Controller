@@ -9,7 +9,6 @@ import UIKit
 
 
 class ViewController: UIViewController {
-    //MARK: IB Outlets
    
     @IBOutlet weak var redValueLabel: UILabel!
     @IBOutlet weak var greenValueLabel: UILabel!
@@ -21,10 +20,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var currentColorView: UIView!
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         currentColorView.layer.cornerRadius = 40
     
         colorValueSettings()
@@ -42,7 +40,7 @@ class ViewController: UIViewController {
         let green = CGFloat(greenSlider.value)
         let blue = CGFloat(blueSlider.value)
         
-        currentColorView.backgroundColor = UIColor.init(displayP3Red: red, green: green, blue: blue, alpha: 1)
+        currentColorView.backgroundColor = UIColor(displayP3Red: red, green: green, blue: blue, alpha: 1)
     }
     
     private func colorValueSettings() {
