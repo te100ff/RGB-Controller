@@ -29,6 +29,7 @@ class ViewController: UIViewController {
         colorSettings()
     }
     
+    // MARK: - 
 
     @IBAction func allSliders() {
         colorSettings()
@@ -40,7 +41,11 @@ class ViewController: UIViewController {
         let green = CGFloat(greenSlider.value)
         let blue = CGFloat(blueSlider.value)
         
-        currentColorView.backgroundColor = UIColor(displayP3Red: red, green: green, blue: blue, alpha: 1)
+        currentColorView.backgroundColor = UIColor(
+            red: red,
+            green: green,
+            blue: blue,
+            alpha: 1)
     }
     
     private func colorValueSettings() {
