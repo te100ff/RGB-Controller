@@ -8,7 +8,7 @@
 import UIKit
 
 
-class ViewController: UIViewController {
+class SettingsViewController: UIViewController {
    
     @IBOutlet weak var redValueLabel: UILabel!
     @IBOutlet weak var greenValueLabel: UILabel!

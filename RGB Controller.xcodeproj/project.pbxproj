@@ -7,19 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		183BF9D4261FA625003D848A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183BF9D3261FA625003D848A /* MainViewController.swift */; };
 		18DC92A1260D2AF10082D96C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DC92A0260D2AF10082D96C /* AppDelegate.swift */; };
 		18DC92A3260D2AF10082D96C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DC92A2260D2AF10082D96C /* SceneDelegate.swift */; };
-		18DC92A5260D2AF10082D96C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DC92A4260D2AF10082D96C /* ViewController.swift */; };
+		18DC92A5260D2AF10082D96C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DC92A4260D2AF10082D96C /* SettingsViewController.swift */; };
 		18DC92A8260D2AF10082D96C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18DC92A6260D2AF10082D96C /* Main.storyboard */; };
 		18DC92AA260D2AF20082D96C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18DC92A9260D2AF20082D96C /* Assets.xcassets */; };
 		18DC92AD260D2AF20082D96C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18DC92AB260D2AF20082D96C /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		183BF9D3261FA625003D848A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		18DC929D260D2AF10082D96C /* RGB Controller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RGB Controller.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18DC92A0260D2AF10082D96C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18DC92A2260D2AF10082D96C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		18DC92A4260D2AF10082D96C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		18DC92A4260D2AF10082D96C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		18DC92A7260D2AF10082D96C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18DC92A9260D2AF20082D96C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18DC92AC260D2AF20082D96C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,6 +39,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		183BF9D6261FA63B003D848A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				18DC92A4260D2AF10082D96C /* SettingsViewController.swift */,
+				183BF9D3261FA625003D848A /* MainViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		183BF9D8261FA64F003D848A /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				18DC92A6260D2AF10082D96C /* Main.storyboard */,
+				18DC92AB260D2AF20082D96C /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		183BF9D9261FA676003D848A /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				18DC92A0260D2AF10082D96C /* AppDelegate.swift */,
+				18DC92AE260D2AF20082D96C /* Info.plist */,
+				18DC92A2260D2AF10082D96C /* SceneDelegate.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		183BF9DB261FA68E003D848A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				18DC92A9260D2AF20082D96C /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		18DC9294260D2AF10082D96C = {
 			isa = PBXGroup;
 			children = (
@@ -56,13 +94,10 @@
 		18DC929F260D2AF10082D96C /* RGB Controller */ = {
 			isa = PBXGroup;
 			children = (
-				18DC92A0260D2AF10082D96C /* AppDelegate.swift */,
-				18DC92A2260D2AF10082D96C /* SceneDelegate.swift */,
-				18DC92A4260D2AF10082D96C /* ViewController.swift */,
-				18DC92A6260D2AF10082D96C /* Main.storyboard */,
-				18DC92A9260D2AF20082D96C /* Assets.xcassets */,
-				18DC92AB260D2AF20082D96C /* LaunchScreen.storyboard */,
-				18DC92AE260D2AF20082D96C /* Info.plist */,
+				183BF9D9261FA676003D848A /* Support */,
+				183BF9D6261FA63B003D848A /* ViewControllers */,
+				183BF9D8261FA64F003D848A /* StoryBoards */,
+				183BF9DB261FA68E003D848A /* Resources */,
 			);
 			path = "RGB Controller";
 			sourceTree = "<group>";
@@ -137,9 +172,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18DC92A5260D2AF10082D96C /* ViewController.swift in Sources */,
+				18DC92A5260D2AF10082D96C /* SettingsViewController.swift in Sources */,
 				18DC92A1260D2AF10082D96C /* AppDelegate.swift in Sources */,
 				18DC92A3260D2AF10082D96C /* SceneDelegate.swift in Sources */,
+				183BF9D4261FA625003D848A /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +324,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FC33F5QU8X;
-				INFOPLIST_FILE = "RGB Controller/Info.plist";
+				INFOPLIST_FILE = "RGB Controller/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,7 +343,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FC33F5QU8X;
-				INFOPLIST_FILE = "RGB Controller/Info.plist";
+				INFOPLIST_FILE = "RGB Controller/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
