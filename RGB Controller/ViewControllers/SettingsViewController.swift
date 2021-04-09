@@ -29,6 +29,7 @@ class SettingsViewController: UIViewController {
         currentColorView.layer.cornerRadius = 40
     
         currentColorView.backgroundColor = viewColor
+        slidersValue()
         setValue(for: redValueLabel, greenValueLabel, blueValueLabel)
         
     }
@@ -44,6 +45,7 @@ class SettingsViewController: UIViewController {
         }
         
         setViewColor()
+       
 
     }
     
@@ -62,6 +64,7 @@ class SettingsViewController: UIViewController {
             blue: CGFloat(blueSlider.value),
             alpha: 1)
          viewColor = currentColorView.backgroundColor
+        
     }
     
     private func setValue(for labels: UILabel...) {
@@ -82,9 +85,20 @@ class SettingsViewController: UIViewController {
         }
 
 
-//    private func slidersValue() {
-//        redSlider.value = viewColor
-//    }
+    private func slidersValue() {
+        var  red = CGFloat(redSlider.value)
+        var  green = CGFloat(greenSlider.value)
+        var  blue = CGFloat(blueSlider.value)
+        var  alfa: CGFloat = 1
+
+        viewColor.getRed(&red, green: &green, blue: &blue, alpha: &alfa)
+
+        redSlider.value = Float(red)
+        blueSlider.value = Float(blue)
+        greenSlider.value = Float(green)
+
+
+    }
 }
 
 
