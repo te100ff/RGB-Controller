@@ -20,12 +20,15 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var currentColorView: UIView!
     
+    var viewColor: UIColor!
+    var delegate: MainViewColorDelegate!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         currentColorView.layer.cornerRadius = 40
     
-        setViewColor()
+        currentColorView.backgroundColor = viewColor
         setValue(for: redValueLabel, greenValueLabel, blueValueLabel)
         
     }
@@ -49,8 +52,7 @@ class SettingsViewController: UIViewController {
     }
     
     
-    
-    
+       
     
     private func setViewColor() {
         currentColorView.backgroundColor = UIColor(
@@ -78,6 +80,9 @@ class SettingsViewController: UIViewController {
         }
 
 
+    private func slidersValue {
+        redSlider.value = viewColor
+    }
 }
 
 

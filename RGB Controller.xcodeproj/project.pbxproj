@@ -42,8 +42,8 @@
 		183BF9D6261FA63B003D848A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				18DC92A4260D2AF10082D96C /* SettingsViewController.swift */,
 				183BF9D3261FA625003D848A /* MainViewController.swift */,
+				18DC92A4260D2AF10082D96C /* SettingsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
