@@ -94,10 +94,10 @@
 		18DC929F260D2AF10082D96C /* RGB Controller */ = {
 			isa = PBXGroup;
 			children = (
-				183BF9D9261FA676003D848A /* Support */,
-				183BF9D6261FA63B003D848A /* ViewControllers */,
 				183BF9D8261FA64F003D848A /* StoryBoards */,
+				183BF9D6261FA63B003D848A /* ViewControllers */,
 				183BF9DB261FA68E003D848A /* Resources */,
+				183BF9D9261FA676003D848A /* Support */,
 			);
 			path = "RGB Controller";
 			sourceTree = "<group>";

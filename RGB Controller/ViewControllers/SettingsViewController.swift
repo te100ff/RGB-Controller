@@ -25,35 +25,59 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         currentColorView.layer.cornerRadius = 40
     
-        colorValueSettings()
-        colorSettings()
-    }
-    
-    // MARK: - 
-
-    @IBAction func allSliders() {
-        colorSettings()
-        colorValueSettings()
-    }
-    
-    private func colorSettings() {
-        let red = CGFloat(redSlider.value)
-        let green = CGFloat(greenSlider.value)
-        let blue = CGFloat(blueSlider.value)
+        setViewColor()
+        setValue(for: redValueLabel, greenValueLabel, blueValueLabel)
         
+    }
+    
+    // MARK: -
+    
+    
+    @IBAction func colorSliders(_ sender: UISlider) {
+        switch sender {
+        case redSlider: setValue(for: redValueLabel)
+        case greenSlider: setValue(for: greenValueLabel)
+        default: setValue(for: blueValueLabel)
+        }
+        
+        setViewColor()
+
+    }
+    
+    @IBAction func doneButton() {
+        dismiss(animated: true)
+    }
+    
+    
+    
+    
+    
+    private func setViewColor() {
         currentColorView.backgroundColor = UIColor(
-            red: red,
-            green: green,
-            blue: blue,
+            red: CGFloat(redSlider.value),
+            green: CGFloat(greenSlider.value),
+            blue: CGFloat(blueSlider.value),
             alpha: 1)
     }
     
-    private func colorValueSettings() {
-        redValueLabel.text = String(format: "%.2f", redSlider.value)
-        greenValueLabel.text = String(format: "%.2f", greenSlider.value)
-        blueValueLabel.text = String(format: "%.2f", blueSlider.value)
+    private func setValue(for labels: UILabel...) {
+        labels.forEach { label in
+            switch label {
+            case redValueLabel:
+                label.text = colorValueSettings(slider: redSlider)
+            case greenValueLabel:
+                label.text = colorValueSettings(slider: greenSlider)
+            default:
+                label.text = colorValueSettings(slider: blueSlider)
+            }
+        }
     }
+    
+    private func colorValueSettings(slider: UISlider) -> String {
+        String(format: "%.2f", slider.value)
+        }
 
 
 }
+
 

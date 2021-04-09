@@ -98,21 +98,21 @@
                                         <rect key="frame" x="-2" y="0.0" width="244" height="31"/>
                                         <color key="minimumTrackTintColor" systemColor="systemRedColor"/>
                                         <connections>
-                                            <action selector="allSliders" destination="BYZ-38-t0r" eventType="valueChanged" id="leJ-kN-u4q"/>
+                                            <action selector="colorSliders:" destination="BYZ-38-t0r" eventType="valueChanged" id="F9l-Oc-RrN"/>
                                         </connections>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="hdG-Fy-gCe">
                                         <rect key="frame" x="-2" y="45" width="244" height="31"/>
                                         <color key="minimumTrackTintColor" systemColor="systemGreenColor"/>
                                         <connections>
-                                            <action selector="allSliders" destination="BYZ-38-t0r" eventType="valueChanged" id="q1u-GI-EOc"/>
+                                            <action selector="colorSliders:" destination="BYZ-38-t0r" eventType="valueChanged" id="dB4-2M-iNm"/>
                                         </connections>
                                     </slider>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="I4v-FS-zBo">
                                         <rect key="frame" x="-2" y="90" width="244" height="31"/>
                                         <color key="minimumTrackTintColor" systemColor="systemBlueColor"/>
                                         <connections>
-                                            <action selector="allSliders" destination="BYZ-38-t0r" eventType="valueChanged" id="b1X-dB-hMK"/>
+                                            <action selector="colorSliders:" destination="BYZ-38-t0r" eventType="valueChanged" id="TPa-gR-Qda"/>
                                         </connections>
                                     </slider>
                                 </subviews>
@@ -121,10 +121,13 @@
                                 <rect key="frame" x="160" y="698" width="70" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="doneButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="GRU-Dd-U3n"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                        <color key="backgroundColor" red="0.94101379190208156" green="0.7443883484900089" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="P5D-NT-T33" firstAttribute="top" secondItem="5PK-6l-wYX" secondAttribute="bottom" constant="20" id="ETV-LW-cXE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5PK-6l-wYX" secondAttribute="trailing" constant="20" id="EtR-Ng-hhU"/>
@@ -180,9 +183,6 @@
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
