@@ -8,7 +8,7 @@
 import UIKit
 
 protocol MainViewColorDelegate {
-    func setNewColor(for view: UIColor)
+    func setNewColor(for main: UIColor)
 }
 
 class MainViewController: UIViewController {
@@ -32,5 +32,9 @@ class MainViewController: UIViewController {
 }
 
 extension MainViewController: MainViewColorDelegate {
+    func setNewColor(for main: UIColor) {
+        self.view.backgroundColor = main
+        }
+    
     
 }

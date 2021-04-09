@@ -49,6 +49,7 @@ class SettingsViewController: UIViewController {
     
     @IBAction func doneButton() {
         dismiss(animated: true)
+        delegate.setNewColor(for: viewColor)
     }
     
     
@@ -60,6 +61,7 @@ class SettingsViewController: UIViewController {
             green: CGFloat(greenSlider.value),
             blue: CGFloat(blueSlider.value),
             alpha: 1)
+         viewColor = currentColorView.backgroundColor
     }
     
     private func setValue(for labels: UILabel...) {
@@ -80,9 +82,9 @@ class SettingsViewController: UIViewController {
         }
 
 
-    private func slidersValue {
-        redSlider.value = viewColor
-    }
+//    private func slidersValue() {
+//        redSlider.value = viewColor
+//    }
 }
 
 
