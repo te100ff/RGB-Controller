@@ -36,8 +36,8 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         currentColorView.layer.cornerRadius = 40
-    
         currentColorView.backgroundColor = viewColor
+        
         slidersValue()
         setValue(for: redValueLabel, greenValueLabel, blueValueLabel)
         setValueForTF(for: redTF, greenTF, blueTF)
@@ -115,18 +115,10 @@ class SettingsViewController: UIViewController {
 
 
     private func slidersValue() {
-        var  red = CGFloat(redSlider.value)
-        var  green = CGFloat(greenSlider.value)
-        var  blue = CGFloat(blueSlider.value)
-        var  alfa: CGFloat = 1
-
-        viewColor.getRed(&red, green: &green, blue: &blue, alpha: &alfa)
-
-        redSlider.value = Float(red)
-        blueSlider.value = Float(blue)
-        greenSlider.value = Float(green)
-
-
+        let components = CIColor(color: viewColor)
+        redSlider.value = Float(components.red)
+        greenSlider.value = Float(components.green)
+        blueSlider.value = Float(components.blue)
     }
 }
 
@@ -149,28 +141,25 @@ extension SettingsViewController: UITextFieldDelegate {
         
         
 
-        func textFieldDidBeginEditing (_ textField: UITextField) {
-            textField.selectAll(nil)
-//            let toolBar = UIToolbar()
-//
-//            let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(UITextField.resignFirstResponder))
-//            toolBar.items?.append(doneButton)
-            
-            let toolBar = UIToolbar()
-                 toolBar.sizeToFit()
-            let button = UIBarButtonItem(title: "Done", style: .plain, target: self,
-                                         action:#selector(redTF.resignFirstResponder))
-                 toolBar.setItems([button], animated: true)
-               toolBar.isUserInteractionEnabled = true
-                 redTF.inputAccessoryView = toolBar
-
-            
-
-        }
-
+    func textFieldDidBeginEditing (_ textField: UITextField) {
+        textField.selectAll(nil)
         
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
         
-    
+        let button = UIBarButtonItem(
+            title: "Done",
+            style: .done,
+            target: textField,
+            action: #selector(resignFirstResponder)
+        )
+        
+        toolBar.items = [button]
+        
+        textField.inputAccessoryView = toolBar
     }
     
+    
+}
+
 
