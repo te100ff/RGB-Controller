@@ -28,7 +28,11 @@ class SettingsViewController: UIViewController {
     var viewColor: UIColor!
     var delegate: MainViewColorDelegate!
     
-    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         currentColorView.layer.cornerRadius = 40
@@ -126,4 +130,47 @@ class SettingsViewController: UIViewController {
     }
 }
 
+extension SettingsViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let newValue = textField.text else { return }
+        guard let value = Float(newValue), value >= 0 && value <= 1  else {
+            setValueForTF(for: redTF, greenTF, blueTF)
+            return }
+        
+        switch textField {
+        case redTF: redSlider.value = value
+        case greenTF: greenSlider.value = value
+        default: blueSlider.value = value
+        }
+        
+        setValue(for: redValueLabel, greenValueLabel, blueValueLabel)
+        setViewColor()
+    }
+        
+        
+
+        func textFieldDidBeginEditing (_ textField: UITextField) {
+            textField.selectAll(nil)
+//            let toolBar = UIToolbar()
+//
+//            let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(UITextField.resignFirstResponder))
+//            toolBar.items?.append(doneButton)
+            
+            let toolBar = UIToolbar()
+                 toolBar.sizeToFit()
+            let button = UIBarButtonItem(title: "Done", style: .plain, target: self,
+                                         action:#selector(redTF.resignFirstResponder))
+                 toolBar.setItems([button], animated: true)
+               toolBar.isUserInteractionEnabled = true
+                 redTF.inputAccessoryView = toolBar
+
+            
+
+        }
+
+        
+        
+    
+    }
+    
 
