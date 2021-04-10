@@ -45,9 +45,15 @@ class SettingsViewController: UIViewController {
     
     @IBAction func colorSliders(_ sender: UISlider) {
         switch sender {
-        case redSlider: setValue(for: redValueLabel)
-        case greenSlider: setValue(for: greenValueLabel)
-        default: setValue(for: blueValueLabel)
+        case redSlider:
+            setValue(for: redValueLabel)
+            setValueForTF(for: redTF)
+        case greenSlider:
+            setValue(for: greenValueLabel)
+            setValueForTF(for: greenTF)
+        default:
+            setValue(for: blueValueLabel)
+            setValueForTF(for: blueTF)
         }
         
         setViewColor()
