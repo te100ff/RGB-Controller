@@ -9,6 +9,11 @@ import UIKit
 
 
 class SettingsViewController: UIViewController {
+    
+    @IBOutlet weak var redTF: UITextField!
+    @IBOutlet weak var greenTF: UITextField!
+    @IBOutlet weak var blueTF: UITextField!
+    
    
     @IBOutlet weak var redValueLabel: UILabel!
     @IBOutlet weak var greenValueLabel: UILabel!
@@ -31,6 +36,7 @@ class SettingsViewController: UIViewController {
         currentColorView.backgroundColor = viewColor
         slidersValue()
         setValue(for: redValueLabel, greenValueLabel, blueValueLabel)
+        setValueForTF(for: redTF, greenTF, blueTF)
         
     }
     
@@ -76,6 +82,19 @@ class SettingsViewController: UIViewController {
                 label.text = colorValueSettings(slider: greenSlider)
             default:
                 label.text = colorValueSettings(slider: blueSlider)
+            }
+        }
+    }
+    
+    private func setValueForTF(for textFields: UITextField...) {
+        textFields.forEach { textField in
+            switch textField {
+            case redTF:
+                textField.text = colorValueSettings(slider: redSlider)
+            case greenTF:
+                textField.text = colorValueSettings(slider: greenSlider)
+            default:
+                textField.text = colorValueSettings(slider: blueSlider)
             }
         }
     }
