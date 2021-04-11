@@ -34,5 +34,4 @@ extension MainViewController: MainViewColorDelegate {
         viewColor = main
     }
     
-    
 }

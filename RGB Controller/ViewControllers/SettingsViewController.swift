@@ -149,16 +149,20 @@ extension SettingsViewController: UITextFieldDelegate {
                 textField: textField)
             return }
         
+        
         switch textField {
         case redTF:
             redSlider.value = value
             setLabelsValue(for: redValueLabel)
+            setTextFieldsValue(for: textField)
         case greenTF:
             greenSlider.value = value
             setLabelsValue(for: greenValueLabel)
+            setTextFieldsValue(for: textField)
         default:
             blueSlider.value = value
             setLabelsValue(for: blueValueLabel)
+            setTextFieldsValue(for: textField)
         }
         
         setViewColor()
